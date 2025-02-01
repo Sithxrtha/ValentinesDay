@@ -27,7 +27,7 @@ const message = document.getElementById('messageClick');
 // Function to execute when the button has the specific inner HTML
 function executeWhenMessageButton() {
     message.style.textAlign="left";
-    message.style.fontFamily="calligraphy";
+    message.style.fontSize="28px";
     message.innerHTML="Dear Mali Rajsavong, <br><br>Thank you for our everlasting journey this past year, I can't thank you more than enough for how "
     + "much you have turned my life around. May our journey continue and this be one of the many celebrations in our lives together baby. "
     + "I love you ❤️ <br><br>Sincerely,<br>Sithartha Phengsavanh :)";
