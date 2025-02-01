@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;  /* Enables Flexbox */
+    flex-direction: column; /* Stacks elements vertically */
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    animation: rainbow-mode 10s infinite ease-in-out;
+}
+
+/* Functions used for heart animation */
+.hidden {
+    display: none;
+}
+
+.bottom-text {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Adjust spacing between emojis */
+    flex-wrap: wrap; /* Ensures it wraps if screen is too small */
+}
+
+/* for header within div */
+.header {
+    font-size: 3rem;
+    font-family: Geneva, sans-serif;
+    text-align: center;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.rounded-box {
+    width: 75vw; /* Adjust width */
+    height: auto; /* Auto height to fit content */
+    background-color: darkgray; /* Inner gray box */
+    color: white;
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Adds a slight shadow */
+    filter: drop-shadow(2px 2px 3px black);
+}
+
+#noButton {
+    position: absolute;
+}
+
+button {
+    width: 100px; /* Equal width */
+    height: 40px; /* Adjust height */
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px;
+    margin: 10px 0; /* Adds vertical space */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Adds a slight shadow */
+}
+
+button:hover {
+    background-color: #D71D36;
+    color: white;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Centers buttons */
+    gap: 20px; /* Adjust spacing between buttons */
+}
+
+button:nth-child(1) {
+    margin-left: -200px;
+}
+
+button:nth-child(2) {
+    margin-right: -200px;
+}
+
+@keyframes rainbow-mode {
+    0% { background-color: #D5A18E; }
+    25% { background-color: pink; }
+    50% { background-color: #D87CAC; }
+    75% { background-color: #D71D36; }
+    100% { background-color: #D5A18E; }
+}
+
+@keyframes heart-animation {
+    0% { background-color: #D5A18E; }
+    25% { background-color: pink; }
+    50% { background-color: #D87CAC; }
+    75% { background-color: #D71D36; }
+    100% { background-color: #D5A18E; }
+}
+
+/* Style for the hearts */
+.heart {
+    position: fixed; /* Fixed positioning to cover the entire viewport */
+    font-size: 24px;
+    color: red; /* Make hearts red */
+    animation: floatAndFade 4s ease-in-out forwards; /* Longer animation duration */
+    pointer-events: none; /* Ensure hearts don't interfere with clicks */
+    z-index: -1; /* Place hearts behind other content */
+}
+
+/* Animation for floating and fading */
+@keyframes floatAndFade {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+}
+
+/* Ensure your main content is above the hearts */
+#text, #yesButton, #noButton {
+    position: relative;
+    z-index: 1; /* Place content above the hearts */
+}
